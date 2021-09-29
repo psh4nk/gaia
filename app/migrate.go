@@ -194,7 +194,7 @@ $ %s migrate /path/to/genesis.json --chain-id=cosmoshub-4 --genesis-time=2019-04
 
 	cmd.Flags().String(flagGenesisTime, "", "override genesis_time with this flag")
 	cmd.Flags().Int(flagInitialHeight, 0, "Set the starting height for the chain")
-	cmd.Flags().String(flagReplacementKeys, "", "Proviide a JSON file to replace the consensus keys of validators")
+	cmd.Flags().String(flagReplacementKeys, "", "Provide a JSON file to replace the consensus keys of validators")
 	cmd.Flags().String(flags.FlagChainID, "", "override chain_id with this flag")
 	cmd.Flags().Bool(flagNoProp29, false, "Do not implement fund recovery from prop29")
 
