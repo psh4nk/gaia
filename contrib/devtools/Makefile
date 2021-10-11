@@ -86,29 +86,29 @@ protoc-gen-gocosmos:
 	@echo "Installing protoc-gen-gocosmos..."
 	@go install github.com/regen-network/cosmos-proto/protoc-gen-gocosmos
 
-buf: protoc-gen-buf-check-breaking protoc-gen-buf-check-lint
+buf: protoc-gen-buf-breaking protoc-gen-buf-lint
 	@echo "Installing buf..."
 	@(cd /tmp; \
 	curl -sSOL "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_S}-${UNAME_M}"; \
 	mv buf-${UNAME_S}-${UNAME_M} "${BIN}/buf"; \
 	chmod +x "${BIN}/buf")
 
-protoc-gen-buf-check-breaking:
-	@echo "Installing protoc-gen-buf-check-breaking..."
+protoc-gen-buf-breaking:
+	@echo "Installing protoc-gen-buf-breaking..."
 	@(cd /tmp; \
-	curl -sSOL "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/protoc-gen-buf-check-breaking-${UNAME_S}-${UNAME_M}"; \
-	mv protoc-gen-buf-check-breaking-${UNAME_S}-${UNAME_M} "${BIN}/protoc-gen-buf-check-breaking"; \
-	chmod +x "${BIN}/protoc-gen-buf-check-breaking")
+	curl -sSOL "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/protoc-gen-buf-breaking-${UNAME_S}-${UNAME_M}"; \
+	mv protoc-gen-buf-breaking-${UNAME_S}-${UNAME_M} "${BIN}/protoc-gen-buf-breaking"; \
+	chmod +x "${BIN}/protoc-gen-buf-breaking")
 
-protoc-gen-buf-check-lint:
-	@echo "Installing protoc-gen-buf-check-lint..."
+protoc-gen-buf-lint:
+	@echo "Installing protoc-gen-buf-lint..."
 	@(cd /tmp; \
-	curl -sSOL "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/protoc-gen-buf-check-lint-${UNAME_S}-${UNAME_M}"; \
-	mv protoc-gen-buf-check-lint-${UNAME_S}-${UNAME_M} "${BIN}/protoc-gen-buf-check-lint"; \
-	chmod +x "${BIN}/protoc-gen-buf-check-lint")
+	curl -sSOL "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/protoc-gen-buf-lint-${UNAME_S}-${UNAME_M}"; \
+	mv protoc-gen-buf-lint-${UNAME_S}-${UNAME_M} "${BIN}/protoc-gen-buf-lint"; \
+	chmod +x "${BIN}/protoc-gen-buf-lint")
 
 tools-clean:
 	rm -f $(RUNSIM)
 	rm -f tools-stamp
 
-.PHONY: all tools tools-clean protoc buf protoc-gen-buf-check-breaking protoc-gen-buf-check-lint protoc-gen-gocosmos
+.PHONY: all tools tools-clean protoc buf protoc-gen-buf-breaking protoc-gen-buf-lint protoc-gen-gocosmos
